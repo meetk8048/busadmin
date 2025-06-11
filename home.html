@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree RamKunj Travels Admin Panel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> <!-- Include jsPDF Library -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Google Fonts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="E:\Admin Side Web page\styles.css">
+
+</head>
+<body>
+    <header>
+        <img src="E:\Admin Side Web page\20240716_233311.jpg" alt="Logo"> <!-- Logo Image -->
+        <h1>Shree RamKunj Travels Admin Panel</h1>
+    </header>
+    <main>
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="busNumber">Bus Number</label>
+                <input type="text" id="busNumber" name="busNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group">
+                <label for="villageName">Village Name</label>
+                <select id="villageName" name="villageName" required>
+                    <option value="">Select a Village</option>
+                    <option value="Dhandhuka">Dhandhuka</option>
+                    <option value="Tagadi">Tagadi</option>
+                    <option value="Barwala">Barwala</option>
+                    <option value="Kundal">Kundal</option>
+                    <option value="Khambhada">Khambhada</option>
+                    <option value="Salangpur">Salangpur</option>
+                    <option value="Senthali">Senthali</option>
+                    <option value="Botad">Botad</option>
+                    <option value="Nagalpar">Nagalpar</option>
+                    <option value="Jotingada">Jotingada</option>
+                    <option value="Tatam">Tatam</option>
+                    <option value="Goradka">Goradka</option>
+                    <option value="Gadhada">Gadhada</option>
+                    <option value="Raniyala">Raniyala</option>
+                    <option value="Samadhiyala">Samadhiyala</option>
+                    <option value="Moti Kundal">Moti Kundal</option>
+                    <option value="Nani Kundal">Nani Kundal</option>
+                    <option value="Shirvaniya">Shirvaniya</option>
+                    <option value="Kidi">Kidi</option>
+                    <option value="Kariyana">Kariyana</option>
+                    <option value="Babra">Babra</option>
+                    <option value="Lunki">Lunki</option>
+                    <option value="Vandaliya">Vandaliya</option>
+                    <option value="Harsurpur Devaliya">Harsurpur Devaliya</option>
+                    <option value="Khijadiya Radadiya">Khijadiya Radadiya</option>
+                    <option value="Adtala">Adtala</option>
+                    <option value="Jarkhiya">Jarkhiya</option>
+                    <option value="Toda">Toda</option>
+                    <option value="Varasda">Varasda</option>
+                    <option value="Varsada">Varsada</option>
+                    <option value="Ishvariya">Ishvariya</option>
+                    <option value="Amreli">Amreli</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seatNumbers">Seat Numbers (e.g., 1,2,3)</label>
+                <input type="text" id="seatNumbers" name="seatNumbers" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price per Seat</label>
+                <input type="number" id="price" name="price" min="0" required>
+            </div>
+
+            <button type="submit">Book Seats</button>
+        </form>
+        <h2>Bookings</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Bus Number</th>
+                    <th>Date</th>
+                    <th>Village Name</th>
+                    <th>Seat Numbers</th>
+                    <th>Total Price</th>
+                    <th>Total Seats</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="bookingTable">
+                <!-- Booking rows will appear here -->
+            </tbody>
+        </table>
+        <div class="total">
+            Total Price: <span id="totalPrice">0</span><br>
+            Total Seats: <span id="totalSeats">0</span>
+        </div>
+        <button id="generatePDF">Generate PDF</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Shree RamKunj Travels | All rights reserved.</p>
+    </footer>
+
+   <script src="E:\Admin Side Web page\scripts.js"></script>
+</body>
+</html>
